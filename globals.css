@@ -3,9 +3,10 @@
    ────────────────────────────────────────────────────────────────────────
    This repository is a design-token MIRROR consumed by an Open Design
    instance. OD's importer does NOT render this file; it scans it. It reads
-   `--name: value;` declarations with a regex, keeps only the FIRST 80 in
-   file order (a `.slice(0, 80)` cap), and binds each OD TOKEN_SCHEMA token
-   to the FIRST declaration that (a) matches the schema name exactly and
+   each custom-property declaration (a `--name`, then its value) with a regex,
+   keeping only the FIRST 80 in file order (a `.slice(0, 80)` cap), then binds
+   each OD TOKEN_SCHEMA token to the FIRST declaration that (a) matches the
+   schema name exactly and
    (b) is "concrete" (no `var()`/`calc()` reference to a non-schema token).
    An exact + concrete match is bound at HIGH confidence / source-backed.
 
@@ -17,9 +18,11 @@
    block first also guarantees the fonts resolve correctly:
      --font-display → Fraunces,  --font-body → Inter,  --font-mono → Space Grotesk.
 
-   Do not add declarations above this block and do not push it past line 80:
-   anything that displaces these 56 declarations out of the first-80 window
-   will silently drop OD schema coverage. The brand palette and the app's
+   Do not add declarations above this block and do not displace it beyond the
+   first 80 custom-property matches (OD's cap counts matched declarations in
+   scan order, NOT source line numbers). Anything that pushes these 56
+   declarations out of that first-80 window will silently drop OD schema
+   coverage. The brand palette and the app's
    shadcn / @theme blocks are preserved verbatim below for reference.
    ════════════════════════════════════════════════════════════════════════ */
 :root {
