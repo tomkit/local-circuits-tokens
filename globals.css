@@ -1,3 +1,12 @@
+/* Concrete font-family values for static token scanners (Open Design import).
+   The app supplies these at runtime via next/font; declared literally here so
+   Fraunces/Inter/Space Grotesk resolve instead of collapsing to a fallback. */
+:root {
+  --font-fraunces: "Fraunces";
+  --font-inter: "Inter";
+  --font-space-grotesk: "Space Grotesk";
+}
+
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
