@@ -1,4 +1,122 @@
-/* Concrete font-family values for static token scanners (Open Design import).
+/* ════════════════════════════════════════════════════════════════════════
+   OPEN DESIGN (OD) IMPORT CONTRACT — DO NOT APPEND CUSTOM PROPERTIES BELOW
+   ────────────────────────────────────────────────────────────────────────
+   This repository is a design-token MIRROR consumed by an Open Design
+   instance. OD's importer does NOT render this file; it scans it. It reads
+   each custom-property declaration (a `--name`, then its value) with a regex,
+   keeping only the FIRST 80 in file order (a `.slice(0, 80)` cap), then binds
+   each OD TOKEN_SCHEMA token to the FIRST declaration that (a) matches the
+   schema name exactly and
+   (b) is "concrete" (no `var()`/`calc()` reference to a non-schema token).
+   An exact + concrete match is bound at HIGH confidence / source-backed.
+
+   Therefore this block declares EVERY one of the 56 OD TOKEN_SCHEMA tokens,
+   by its exact name, with a concrete LIGHT-THEME Local Circuits brand value,
+   at the very TOP of the file so all 56 fall inside the first-80 window and
+   win over the app-mirrored `@theme inline` declarations further down (which
+   use `var()`/`calc()` and are intentionally NOT concrete). Keeping this
+   block first also guarantees the fonts resolve correctly:
+     --font-display → Fraunces,  --font-body → Inter,  --font-mono → Space Grotesk.
+
+   Do not add declarations above this block and do not displace it beyond the
+   first 80 custom-property matches (OD's cap counts matched declarations in
+   scan order, NOT source line numbers). Anything that pushes these 56
+   declarations out of that first-80 window will silently drop OD schema
+   coverage. The brand palette and the app's
+   shadcn / @theme blocks are preserved verbatim below for reference.
+   ════════════════════════════════════════════════════════════════════════ */
+:root {
+  /* ── Surface ─────────────────────────────────────────────────────── */
+  --bg: #faf7f0;            /* page background — cream */
+  --surface: #ffffff;       /* card / lifted container */
+  --surface-warm: #f1ece2;  /* tertiary warm surface — paper */
+
+  /* ── Foreground ──────────────────────────────────────────────────── */
+  --fg: #1a1a1a;            /* primary body text */
+  --fg-2: #1c3a2a;          /* secondary text — forest */
+  --muted: #6b7280;         /* subtext / captions */
+  --meta: #6b7280;          /* tertiary metadata / caption */
+
+  /* ── Border ──────────────────────────────────────────────────────── */
+  --border: #e7dfd2;        /* default border / card edge */
+  --border-soft: #efe7d9;   /* inner row separator */
+
+  /* ── Accent ──────────────────────────────────────────────────────── */
+  --accent: #e0a82e;        /* brand gold */
+  --accent-on: #3a2a05;     /* text on accent */
+  --accent-hover: #c8901f;  /* gold-deep */
+  --accent-active: #a8760f; /* darker gold — pressed */
+
+  /* ── Semantic ────────────────────────────────────────────────────── */
+  --success: #2d6a4f;       /* pine */
+  --warn: #c8901f;          /* gold-deep */
+  --danger: #c0392b;        /* brand red */
+
+  /* ── Typography — fonts ──────────────────────────────────────────── */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "Space Grotesk", ui-monospace, monospace;
+
+  /* ── Typography — type scale ─────────────────────────────────────── */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+
+  /* ── Typography — leading & tracking ─────────────────────────────── */
+  --leading-body: 1.55;
+  --leading-tight: 1.15;
+  --tracking-display: -0.02em;
+
+  /* ── Spacing — base scale ────────────────────────────────────────── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+
+  /* ── Section rhythm ──────────────────────────────────────────────── */
+  --section-y-desktop: 96px;
+  --section-y-tablet: 68px;
+  --section-y-phone: 48px;
+
+  /* ── Radius ──────────────────────────────────────────────────────── */
+  --radius-sm: 0.45rem;
+  --radius-md: 0.6rem;
+  --radius-lg: 0.75rem;
+  --radius-pill: 9999px;
+
+  /* ── Elevation ───────────────────────────────────────────────────── */
+  --elev-flat: none;
+  --elev-ring: 0 0 0 1px #e7dfd2;
+  --elev-raised: 0 2px 8px rgba(20, 42, 30, 0.08);
+
+  /* ── Focus ───────────────────────────────────────────────────────── */
+  --focus-ring: 0 0 0 3px rgba(224, 168, 46, 0.45);
+
+  /* ── Motion ──────────────────────────────────────────────────────── */
+  --motion-fast: 150ms;
+  --motion-base: 200ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+
+  /* ── Layout ──────────────────────────────────────────────────────── */
+  --container-max: 1120px;
+  --container-gutter-desktop: 32px;
+  --container-gutter-tablet: 24px;
+  --container-gutter-phone: 16px;
+}
+/* ════════════════ END OPEN DESIGN IMPORT CONTRACT ═══════════════════════ */
+
+/* ────────────────────────────────────────────────────────────────────────
+   APP-MIRRORED SOURCE BELOW (reference only; OD binds the block above).
+   Concrete font-family values for static token scanners (Open Design import).
    The app supplies these at runtime via next/font; declared literally here so
    Fraunces/Inter/Space Grotesk resolve instead of collapsing to a fallback. */
 :root {
