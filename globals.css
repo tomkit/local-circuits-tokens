@@ -1,0 +1,206 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), Georgia, serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-heading: var(--font-fraunces), Georgia, serif;
+  --font-mono: var(--font-space-grotesk), ui-monospace, monospace;
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+
+  /* LocalCircuits brand palette */
+  --color-forest: var(--forest);
+  --color-espresso: var(--espresso);
+  --color-pine: var(--pine);
+  --color-leaf: var(--leaf);
+  --color-leaf-soft: var(--leaf-soft);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-cream: var(--cream);
+  --color-paper: var(--paper);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  /* Brand raw values */
+  --forest: #1c3a2a;
+  --espresso: #142a1e;
+  --pine: #2d6a4f;
+  --leaf: #52b788;
+  --leaf-soft: #7fcba4;
+  --gold: #e0a82e;
+  --gold-deep: #c8901f;
+  --cream: #faf7f0;
+  --paper: #f1ece2;
+
+  /* shadcn semantic tokens mapped onto the brand */
+  --background: #faf7f0;
+  --foreground: #1a1a1a;
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a1a;
+  --primary: #1c3a2a;
+  --primary-foreground: #faf7f0;
+  --secondary: #f1ece2;
+  --secondary-foreground: #1c3a2a;
+  --muted: #f1ece2;
+  --muted-foreground: #6b7280;
+  --accent: #e0a82e;
+  --accent-foreground: #3a2a05;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #e7dfd2;
+  --input: #e7dfd2;
+  --ring: #2d6a4f;
+  --chart-1: #2d6a4f;
+  --chart-2: #52b788;
+  --chart-3: #e0a82e;
+  --chart-4: #7fcba4;
+  --chart-5: #1c3a2a;
+  --radius: 0.75rem;
+  --sidebar: #1c3a2a;
+  --sidebar-foreground: #faf7f0;
+  --sidebar-primary: #e0a82e;
+  --sidebar-primary-foreground: #3a2a05;
+  --sidebar-accent: #234634;
+  --sidebar-accent-foreground: #faf7f0;
+  --sidebar-border: rgba(255, 255, 255, 0.12);
+  --sidebar-ring: #52b788;
+}
+
+.dark {
+  --background: #142a1e;
+  --foreground: #faf7f0;
+  --card: #1c3a2a;
+  --card-foreground: #faf7f0;
+  --popover: #1c3a2a;
+  --popover-foreground: #faf7f0;
+  --primary: #e0a82e;
+  --primary-foreground: #3a2a05;
+  --secondary: #234634;
+  --secondary-foreground: #faf7f0;
+  --muted: #234634;
+  --muted-foreground: #9db5a6;
+  --accent: #52b788;
+  --accent-foreground: #142a1e;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: rgba(255, 255, 255, 0.12);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: #52b788;
+  --chart-1: #52b788;
+  --chart-2: #7fcba4;
+  --chart-3: #e0a82e;
+  --chart-4: #2d6a4f;
+  --chart-5: #faf7f0;
+  --sidebar: #142a1e;
+  --sidebar-foreground: #faf7f0;
+  --sidebar-primary: #e0a82e;
+  --sidebar-primary-foreground: #3a2a05;
+  --sidebar-accent: #234634;
+  --sidebar-accent-foreground: #faf7f0;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #52b788;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+  /* Visible keyboard focus on every interactive element (custom card links
+     included), so the app is navigable without a mouse. */
+  a:focus-visible,
+  button:focus-visible,
+  summary:focus-visible,
+  [role='button']:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid #1c3a2a;
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+  }
+}
+
+/* Paper grain overlay for the "expensive" tactile feel */
+.paper-grain::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.lc-pulse {
+  transform-origin: 145px 34px;
+  animation: lc-pulse 2.8s ease-in-out infinite;
+}
+@keyframes lc-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
