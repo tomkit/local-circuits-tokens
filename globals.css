@@ -24,6 +24,14 @@
    declarations out of that first-80 window will silently drop OD schema
    coverage. The brand palette and the app's
    shadcn / @theme blocks are preserved verbatim below for reference.
+   ──────────────────────────────────────────────────────────────────────────
+   RE-SYNC 2026-07-11 — all 56 values re-verified against the merged app main
+   (Duber88/Local-Circuits origin/main @ 3dc1e87, app/globals.css blob 7b6e73f).
+   The design-system merge was purely additive; 0 of 56 tokens drifted, so every
+   contract value below is unchanged. The app's new non-schema tokens (z-index,
+   elevation, motion, text-2xs / text-3xs scales) are intentionally NOT mirrored
+   here — they are not OD TOKEN_SCHEMA tokens and would only consume first-80
+   scan-window slots.
    ════════════════════════════════════════════════════════════════════════ */
 :root {
   /* ── Surface ─────────────────────────────────────────────────────── */
